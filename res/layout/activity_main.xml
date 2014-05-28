@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/buttonBar"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/showProvidersButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:onClick="onShowProvidersClick"
+            android:text="@string/show_providers" />
+        
+        <Button
+            android:id="@+id/showSCServicesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/showProvidersButton"
+            android:onClick="onShowSCServicesClick"
+            android:text="@string/show_sc_services" />
+        
+        <Button
+            android:id="@+id/encryptButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/showProvidersButton"
+            android:layout_below="@id/showSCServicesButton"
+            android:onClick="onEncryptClick"
+            android:text="@string/encrypt_data" />
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/showSCServicesButton"
+            android:layout_toRightOf="@id/encryptButton"
+            android:onClick="onDecryptClick"
+            android:text="@string/decrypt_data" />
+        
+    </RelativeLayout>
+
+     <EditText
+        android:id="@+id/inDataText"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/buttonBar"
+        android:background="@drawable/textview_border"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:text="@string/in_data" />
+
+    <EditText
+        android:id="@+id/outDataText"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/inDataText"
+        android:background="@drawable/textview_border"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:text="@string/out_data" />
+    
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/outDataText"
+        android:fillViewport="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/out_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </ScrollView>
+
+</RelativeLayout>
